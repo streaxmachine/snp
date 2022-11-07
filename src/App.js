@@ -9,14 +9,15 @@ import { Monitors } from "./Components/Monitors";
 import { Drone } from "./Components/Drone";
 import PreloaderContainer from "./Components/Preloader/PreloaderContainer";
 import SnpPicInfo from "./Components/SnpPicInfo";
+import HousePicInfo from "./Components/HousePicInfo";
 
 function App() {
   return (
     <>
       <PreloaderContainer />
       <Canvas flat camera={{ fov: 30, position: [25, 5, 4] }}>
-        <color args={["#2a2d6e"]} attach="background" />
         <Controls />
+        <color args={["#2a2d6e"]} attach="background" />
         <Suspense>
           <Drone />
           <Monitors />
@@ -25,6 +26,7 @@ function App() {
         </Suspense>
         <SphereWireframe />
       </Canvas>
+      <HousePicInfo />
       <SnpPicInfo />
     </>
   );

@@ -35,6 +35,7 @@ function Controls(props) {
 
   return (
     <mapControls
+      makeDefault
       ref={controls}
       args={[camera, gl.domElement]}
       dampingFactor={0.05}
