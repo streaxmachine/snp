@@ -59,9 +59,8 @@ body,
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  z-index: 1;
   font-family: 'Russo One', sans-serif;
-  animation: move-anim 3s linear infinite;
+  animation: move-anim 5s linear infinite;
   z-index: 1;
   pointer-events: none;
 }
@@ -73,7 +72,7 @@ body,
 background-color: white;
   border: solid 1px white;
   border-radius: 20px;
-  opacity: 0.5;
+  opacity: 0.8;
   pointer-events: none;
 
 }
