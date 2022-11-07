@@ -31,7 +31,7 @@ function Controls(props) {
         camera.position.x = this.target.x + 25;
       }
     });
-  }, []);
+  }, [camera.position]);
 
   return (
     <mapControls

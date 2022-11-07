@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { useState } from "react";
 import { gsap } from "gsap";
 import { setSnpShowInfo } from "../redux/actions";
 

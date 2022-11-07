@@ -28,7 +28,7 @@ export function Drone(props) {
     });
   });
 
-  const { nodes, materials } = useGLTF("/drone.glb");
+  const { nodes } = useGLTF("/drone.glb");
   return (
     <group {...props} dispose={null} scale={[3, 3, 3]}>
       <group

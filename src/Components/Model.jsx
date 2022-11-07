@@ -1,4 +1,3 @@
-import { useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture, Html } from "@react-three/drei";
 import { useDispatch } from "react-redux";
 import { setSnpShowInfo } from "../redux/actions";
@@ -7,7 +6,7 @@ function Model(props) {
   const dispatch = useDispatch();
   const bakedFloor = useTexture("/BakedFloorWallsGood2.jpg");
   const bakedScene = useTexture("/BakedScene.002.jpg");
-  const { nodes, materials } = useGLTF("/snpoffice9.glb");
+  const { nodes } = useGLTF("/snpoffice9.glb");
 
   return (
     <group {...props} dispose={null}>
