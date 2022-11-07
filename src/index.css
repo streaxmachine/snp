@@ -1,13 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
 body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  /* background: #1d2142; */
+  color: white;
+  font-family: 'Inter var', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body,
+#root
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+}
+
+.spinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: #7b8062 transparent #748e92 transparent;
+  border-radius: 50%;
+  animation: spin-anim 1.2s linear infinite;
+}
+
+.loader-text {
+  margin-top: 30px;
+  font-family: 'Russo One', sans-serif;
+
+}
+
+.loader-container-starter {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  background: rgba(0, 0, 0, 1);
+  z-index: 1;
+
+}
+
+.move-mouse {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  font-family: 'Roboto Slab', serif;
+  animation: move-anim 3s linear infinite;
+  pointer-events: auto;
+}
+
+.move-mouse-text {
+  font-size: 20px;
+  padding: 10px;
+  color: black;
+background-color: white;
+  border: solid 1px white;
+  border-radius: 20px;
+  opacity: 0.5;
+  pointer-events: auto;
+}
+
+.label-3d {
+  font-family: 'Roboto Slab', serif;
+position: absolute;
+background : white;
+color: red;
+padding: 15px;
+white-space: nowrap;
+overflow: hidden;
+border-radius: 50px;
+cursor: pointer;
+border: 2px solid rgb(35, 35, 43);
+animation: move-anim 3s linear infinite;
+}
+
+.place-information {
+  background-color: white;
+  position: absolute;
+  width: 300px;
+  height: 100vh;
+  right:-300px;
+  top:0;
+  z-index: 5; 
+  font-size: 20px;
+  font-family: 'Russo One', sans-serif;
+  }
+
+  .snp-info{
+    color: black;
+    font-family: 'Russo One', sans-serif;
+  }
+
+
+/* CSS */
+.button-31 {
+  background-color: #222;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 5px 15px 5px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+.button-31:hover,
+.button-31:focus {
+  opacity: .75;
+}
+
+
+
+@keyframes move-anim {
+  from { opacity: 0.9; /* Непрозрачный текст */ }
+  to { opacity: 0; /* Прозрачный текст */ }
+ }
+
+
+
+
+@keyframes spin-anim {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
 }
