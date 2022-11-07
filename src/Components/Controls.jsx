@@ -17,18 +17,18 @@ function Controls(props) {
     controls.current.addEventListener("change", function () {
       if (this.target.z < -8) {
         this.target.z = -8;
-        camera.position.z = this.target.z + 4;
+        camera.position.z = this.target.z + 2;
       } else if (this.target.z > 2) {
         this.target.z = 2;
-        camera.position.z = this.target.z + 4;
+        camera.position.z = this.target.z + 2;
       }
 
       if (this.target.x < -28) {
         this.target.x = -28;
-        camera.position.x = this.target.x + 25;
+        camera.position.x = this.target.x + 27;
       } else if (this.target.x > 0) {
         this.target.x = 0;
-        camera.position.x = this.target.x + 25;
+        camera.position.x = this.target.x + 27;
       }
     });
   }, [camera.position]);

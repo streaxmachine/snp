@@ -47,7 +47,7 @@ body,
   align-items: center;
   position: fixed;
   background: rgba(0, 0, 0, 1);
-  z-index: 1;
+  z-index: 2;
 
 }
 
@@ -60,9 +60,10 @@ body,
   flex-direction: column;
   align-items: center;
   z-index: 1;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Russo One', sans-serif;
   animation: move-anim 3s linear infinite;
-  pointer-events: auto;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .move-mouse-text {
@@ -73,21 +74,33 @@ background-color: white;
   border: solid 1px white;
   border-radius: 20px;
   opacity: 0.5;
-  pointer-events: auto;
+  pointer-events: none;
+
 }
 
 .label-3d {
-  font-family: 'Roboto Slab', serif;
 position: absolute;
 background : white;
-color: red;
-padding: 15px;
+color: rgb(31, 31, 31);
+padding: 12px;
 white-space: nowrap;
 overflow: hidden;
 border-radius: 50px;
 cursor: pointer;
-border: 2px solid rgb(35, 35, 43);
-animation: move-anim 3s linear infinite;
+font-size: 25px;
+border: 3px solid rgb(35, 35, 43);
+animation: move-anim 5s linear infinite;
+}
+
+.label-3d:hover {
+  animation: none;
+  border: 3px solid rgb(14, 107, 162);
+}
+
+.chill-place {
+  padding: 12px;
+  font-family: 'Russo One', sans-serif;
+
 }
 
 .place-information {

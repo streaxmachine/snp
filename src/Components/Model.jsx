@@ -1,6 +1,7 @@
 import { useGLTF, useTexture, Html } from "@react-three/drei";
 import { useDispatch } from "react-redux";
 import { setHouseShowInfo, setSnpShowInfo } from "../redux/actions";
+import { TableInfo } from "./TableInfo";
 
 function Model(props) {
   const dispatch = useDispatch();
@@ -102,6 +103,14 @@ function Model(props) {
             position={[12.31, -0.14, -4.86]}
           >
             <meshStandardMaterial roughness={0.2} color="gray" />
+            <Html
+              position={[0, 0.5, 0]}
+              zIndexRange={[0, 0]}
+              center
+              distanceFactor={5}
+            >
+              <TableInfo />
+            </Html>
           </mesh>
         </group>
       </group>
@@ -114,7 +123,7 @@ function Model(props) {
         zIndexRange={[0, 0]}
         center
         distanceFactor={12}
-        position={[-15, 4.5, 4.2]}
+        position={[-15, 4.2, 4.2]}
       >
         <div
           className="label-3d"

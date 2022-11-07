@@ -8,7 +8,7 @@ export const Preloader = (props) => {
       {loading ? (
         <div className="loader-container-starter">
           <div className="spinner"></div>
-          <div className="loader-text">SNP OFFICE IS LOADING...</div>
+          <div className="loader-text">SNP WORKSPACE IS LOADING...</div>
         </div>
       ) : null}
     </>

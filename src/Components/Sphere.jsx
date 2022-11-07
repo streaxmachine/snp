@@ -15,7 +15,12 @@ const SphereWireframe = () => {
     <>
       <mesh ref={sphereRef} position={[12.31, 1.5, -4.86]}>
         <sphereGeometry args={[0.6, 30, 30]} />
-        <meshStandardMaterial wireframe color="#07a8f2" roughness={0} />
+        <meshStandardMaterial
+          wireframe
+          color="#07a8f2"
+          roughness={0}
+          envMapIntensity={10}
+        />
       </mesh>
     </>
   );

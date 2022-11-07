@@ -1,13 +1,14 @@
 import React from "react";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 export const DragMouse = () => {
-  const [dragging, setDragging] = useState(true);
+  const dragInfo = useSelector((s) => s.dragInfo);
 
   return (
     <>
-      {dragging && (
-        <div className="move-mouse" onClick={() => setDragging(false)}>
+      {!dragInfo && (
+        <div className="move-mouse">
           <div className="move-mouse-text">Drag your mouse please</div>
         </div>
       )}

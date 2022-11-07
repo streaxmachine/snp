@@ -10,12 +10,22 @@ import { Drone } from "./Components/Drone";
 import PreloaderContainer from "./Components/Preloader/PreloaderContainer";
 import SnpPicInfo from "./Components/SnpPicInfo";
 import HousePicInfo from "./Components/HousePicInfo";
+import { DragMouse } from "./Components/DragMouse";
+import { useDispatch } from "react-redux";
+import { setDragMouse } from "./redux/actions";
 
 function App() {
+  const dispatch = useDispatch();
+
   return (
     <>
       <PreloaderContainer />
-      <Canvas flat camera={{ fov: 30, position: [25, 5, 4] }}>
+      <DragMouse />
+      <Canvas
+        flat
+        camera={{ fov: 30, position: [27, 5, 2] }}
+        onClick={() => dispatch(setDragMouse(true))}
+      >
         <Controls />
         <color args={["#2a2d6e"]} attach="background" />
         <Suspense>
