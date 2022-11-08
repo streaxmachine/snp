@@ -153,6 +153,14 @@ animation: move-anim 5s linear infinite;
   opacity: .75;
 }
 
+@media (max-width: 500px) {
+  .move-mouse {
+    opacity: 0;
+    z-index: 0;
+  }
+}
+
+
 
 
 @keyframes move-anim {
