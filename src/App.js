@@ -1,6 +1,5 @@
 import "./App.css";
 import { Canvas } from "@react-three/fiber";
-import Controls from "./Components/Controls";
 import { Suspense } from "react";
 import { Environment } from "@react-three/drei";
 import { Model } from "./Components/Model";
@@ -13,6 +12,8 @@ import HousePicInfo from "./Components/HousePicInfo";
 import { DragMouse } from "./Components/DragMouse";
 import { useDispatch } from "react-redux";
 import { setDragMouse } from "./redux/actions";
+import { useScroll } from "@react-three/drei";
+import { ScrollControls } from "@react-three/drei";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,16 +25,15 @@ function App() {
       <Canvas
         flat
         camera={{ fov: 30, position: [27, 5, 2] }}
-        onClick={() => dispatch(setDragMouse(true))}
+        onPointerMissed={() => dispatch(setDragMouse(true))}
       >
-        <Controls />
         <color args={["#2a2d6e"]} attach="background" />
-        <Suspense>
-          <Drone />
-          <Monitors />
+        <Drone />
+        <Monitors />
+        <ScrollControls damping={4} distance={5} pages={5}>
           <Model />
-          <Environment preset="city" />
-        </Suspense>
+        </ScrollControls>
+        <Environment preset="city" />
         <SphereWireframe />
       </Canvas>
       <HousePicInfo />

@@ -1,6 +1,7 @@
 import React from "react";
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
+import { Html } from "@react-three/drei";
 
 const SphereWireframe = () => {
   const sphereRef = useRef();
@@ -22,6 +23,17 @@ const SphereWireframe = () => {
           envMapIntensity={10}
         />
       </mesh>
+      <Html
+        zIndexRange={[0, 0]}
+        center
+        distanceFactor={12}
+        position={[-15, 4.8, -2.5]}
+      >
+        <div
+          className="label-3d"
+          // onClick={() => handleClick(true, false)}
+        ></div>
+      </Html>
     </>
   );
 };

@@ -1,27 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 
-body {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  /* background: #1d2142; */
-  color: white;
-  font-family: 'Inter var', sans-serif;
+* {
+  box-sizing: border-box;
 }
 
 html,
 body,
-#root
-{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* background-color: red; */
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  overscroll-behavior: none;
+  background: #efefef;
+  font-family: 'Inter var', sans-serif;
+  cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxMCIgZmlsbD0iYmxhY2siLz48L3N2Zz4='),
+    auto;
+}
+
 
 .spinner {
   width: 64px;
@@ -36,7 +35,7 @@ body,
   margin-top: 30px;
   font-family: 'Russo One', sans-serif;
 
-}
+} 
 
 .loader-container-starter {
   width: 100%;
@@ -120,7 +119,7 @@ animation: move-anim 5s linear infinite;
   }
 
 
-/* CSS */
+
 .button-31 {
   background-color: #222;
   border-style: none;
@@ -164,11 +163,9 @@ animation: move-anim 5s linear infinite;
 
 
 @keyframes move-anim {
-  from { opacity: 0.9; /* Непрозрачный текст */ }
-  to { opacity: 0; /* Прозрачный текст */ }
+  from { opacity: 0.9; }
+  to { opacity: 0;  }
  }
-
-
 
 
 @keyframes spin-anim {

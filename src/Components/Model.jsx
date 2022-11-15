@@ -2,6 +2,8 @@ import { useGLTF, useTexture, Html } from "@react-three/drei";
 import { useDispatch } from "react-redux";
 import { setHouseShowInfo, setSnpShowInfo } from "../redux/actions";
 import { TableInfo } from "./TableInfo";
+import { Camera } from "./Camera";
+import { useScroll } from "@react-three/drei";
 
 function Model(props) {
   const dispatch = useDispatch();
@@ -9,6 +11,7 @@ function Model(props) {
   const bakedScene = useTexture("/BakedScene.002.jpg");
   const houseTexture = useTexture("/QueryHouse.jpg");
   const { nodes } = useGLTF("/snpoffice9.glb");
+  const scroll = useScroll();
 
   const handleClick = (showSnp, showHouse) => {
     dispatch(setSnpShowInfo(showSnp));
@@ -17,6 +20,7 @@ function Model(props) {
 
   return (
     <>
+      <Camera scroll={scroll} />
       <group {...props} dispose={null}>
         <group name="Scene">
           <mesh
@@ -28,17 +32,6 @@ function Model(props) {
           >
             <meshBasicMaterial map={bakedFloor} map-flipY={false} />
           </mesh>
-          <Html
-            zIndexRange={[0, 0]}
-            center
-            distanceFactor={12}
-            position={[-15, 4.8, -2.5]}
-          >
-            <div
-              className="label-3d"
-              onClick={() => handleClick(true, false)}
-            ></div>
-          </Html>
           <mesh
             name="Scene_1"
             castShadow
