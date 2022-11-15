@@ -1,6 +1,5 @@
 import "./App.css";
 import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
 import { Environment } from "@react-three/drei";
 import { Model } from "./Components/Model";
 import SphereWireframe from "./Components/Sphere";
@@ -12,7 +11,6 @@ import HousePicInfo from "./Components/HousePicInfo";
 import { DragMouse } from "./Components/DragMouse";
 import { useDispatch } from "react-redux";
 import { setDragMouse } from "./redux/actions";
-import { useScroll } from "@react-three/drei";
 import { ScrollControls } from "@react-three/drei";
 
 function App() {

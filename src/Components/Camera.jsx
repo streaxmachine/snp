@@ -3,13 +3,12 @@ import { useGLTF, PerspectiveCamera, useAnimations } from "@react-three/drei";
 import { useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { useScroll } from "@use-gesture/react";
 
 export function Camera({ scroll, ...props }) {
   //   const scroll = useScroll();
 
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("/snpOfficeCamera.glb");
+  const { animations } = useGLTF("/snpOfficeCamera.glb");
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => void (actions["Action"].play().paused = true), [actions]);
