@@ -12,9 +12,11 @@ import { DragMouse } from "./Components/DragMouse";
 import { useDispatch } from "react-redux";
 import { setDragMouse } from "./redux/actions";
 import { ScrollControls } from "@react-three/drei";
+import { useRef } from "react";
 
 function App() {
   const dispatch = useDispatch();
+  const portalRef = useRef();
 
   return (
     <>
@@ -28,14 +30,20 @@ function App() {
         <color args={["#2a2d6e"]} attach="background" />
         <Drone />
         <Monitors />
-        <ScrollControls damping={4} distance={5} pages={5}>
-          <Model />
+        <ScrollControls
+          damping={4}
+          distance={5}
+          pages={5}
+          style={{ paddingRight: "17px", boxSizing: "content-box" }}
+        >
+          <Model domEl={portalRef} />
         </ScrollControls>
         <Environment preset="city" />
-        <SphereWireframe />
+        <SphereWireframe domEl={portalRef} />
       </Canvas>
       <HousePicInfo />
       <SnpPicInfo />
+      <div ref={portalRef} className="WrapForhtml"></div>
     </>
   );
 }

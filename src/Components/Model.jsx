@@ -5,7 +5,7 @@ import { TableInfo } from "./TableInfo";
 import { Camera } from "./Camera";
 import { useScroll } from "@react-three/drei";
 
-function Model(props) {
+function Model({ domEl, ...props }) {
   const dispatch = useDispatch();
   const bakedFloor = useTexture("/BakedFloorWallsGood2.jpg");
   const bakedScene = useTexture("/BakedScene.002.jpg");
@@ -21,6 +21,7 @@ function Model(props) {
   return (
     <>
       <Camera scroll={scroll} />
+
       <group {...props} dispose={null}>
         <group name="Scene">
           <mesh
@@ -43,6 +44,19 @@ function Model(props) {
           >
             <meshBasicMaterial map={bakedScene} map-flipY={false} />
           </mesh>
+
+          <Html
+            zIndexRange={[0, 0]}
+            center
+            distanceFactor={12}
+            position={[-15, 4.8, -2.5]}
+            portal={domEl}
+          >
+            <div
+              className="label-3d"
+              onClick={() => dispatch(setSnpShowInfo(true))}
+            ></div>
+          </Html>
 
           <mesh
             name="Sofa_Black"
@@ -101,6 +115,7 @@ function Model(props) {
               zIndexRange={[0, 0]}
               center
               distanceFactor={5}
+              portal={domEl}
             >
               <TableInfo />
             </Html>
@@ -110,21 +125,25 @@ function Model(props) {
       <mesh rotation-y={Math.PI / 2} position={[-13, 2.5, 5]}>
         <planeGeometry args={[2, 3.5]} />
         <meshStandardMaterial color="white" map={houseTexture} />
+        <Html
+          zIndexRange={[0, 0]}
+          center
+          distanceFactor={5}
+          position-y={1.8}
+          position-x={0.9}
+          // position={[-15, 4.2, 5.2]}
+          portal={domEl}
+        >
+          <div
+            className="label-3d"
+            onClick={() => handleClick(false, true)}
+          ></div>
+        </Html>
       </mesh>
-
-      <Html
-        zIndexRange={[0, 0]}
-        center
-        distanceFactor={12}
-        position={[-15, 4.2, 4.2]}
-      >
-        <div
-          className="label-3d"
-          onClick={() => handleClick(false, true)}
-        ></div>
-      </Html>
     </>
   );
 }
+
+useGLTF.preload("/snpoffice9.glb");
 
 export { Model };
