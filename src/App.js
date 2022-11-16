@@ -11,7 +11,7 @@ import HousePicInfo from "./Components/HousePicInfo";
 import { DragMouse } from "./Components/DragMouse";
 import { useDispatch } from "react-redux";
 import { setDragMouse } from "./redux/actions";
-import { ScrollControls } from "@react-three/drei";
+import { ScrollControls, Scroll } from "@react-three/drei";
 import { useRef } from "react";
 
 function App() {
@@ -31,8 +31,9 @@ function App() {
         <Drone />
         <Monitors />
         <ScrollControls
+          infinite
           damping={4}
-          distance={5}
+          distance={4}
           pages={5}
           style={{ paddingRight: "17px", boxSizing: "content-box" }}
         >
