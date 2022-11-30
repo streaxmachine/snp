@@ -14,8 +14,7 @@ function Model({ domEl, ...props }) {
   const scroll = useScroll();
 
   const handleClick = (showSnp, showHouse) => {
-    dispatch(setSnpShowInfo(showSnp));
-    dispatch(setHouseShowInfo(showHouse));
+    dispatch(setHouseShowInfo());
   };
 
   return (
@@ -54,7 +53,7 @@ function Model({ domEl, ...props }) {
           >
             <div
               className="label-3d"
-              onClick={() => dispatch(setSnpShowInfo(true))}
+              onClick={() => dispatch(setSnpShowInfo())}
             ></div>
           </Html>
 

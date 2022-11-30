@@ -6,24 +6,24 @@ import { setSnpShowInfo } from "../redux/actions";
 
 const SnpPicInfo = () => {
   const dispatch = useDispatch();
-  const showInfo = useSelector((state) => state.snpInfo);
+  const sideBar = useSelector((state) => state.sideBar);
 
   const handleClick = () => {
     gsap.to(".place-information", { x: 0, duration: 1 });
     setTimeout(() => {
-      dispatch(setSnpShowInfo(false));
+      dispatch(setSnpShowInfo());
     }, 1000);
   };
 
   useEffect(() => {
-    if (showInfo) {
+    if (sideBar.snpInfo) {
       gsap.to(".place-information", { x: -300, duration: 1 });
     }
-  }, [showInfo]);
+  }, [sideBar]);
 
   return (
     <>
-      {showInfo ? (
+      {sideBar.snpInfo ? (
         <div>
           <div className="place-information">
             <button className="button-31" onClick={handleClick}>
