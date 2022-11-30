@@ -1,9 +1,8 @@
 import React from "react";
-import { useEffect } from "react";
 import { useState } from "react";
 
 export const Preloader = (props) => {
-  const { experience, handleClick } = props;
+  const { experience } = props;
   const [loading, setLoading] = useState(true);
 
   const [animationClass, setAnimationClass] = useState(false);

@@ -8,10 +8,9 @@ import { Drone } from "./Components/Drone";
 import PreloaderContainer from "./Components/Preloader/PreloaderContainer";
 import SnpPicInfo from "./Components/SnpPicInfo";
 import HousePicInfo from "./Components/HousePicInfo";
-import { DragMouse } from "./Components/DragMouse";
 import { useDispatch } from "react-redux";
 import { setDragMouse } from "./redux/actions";
-import { ScrollControls, Scroll } from "@react-three/drei";
+import { ScrollControls } from "@react-three/drei";
 import { useRef } from "react";
 
 function App() {

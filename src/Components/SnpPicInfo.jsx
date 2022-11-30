@@ -13,6 +13,7 @@ const SnpPicInfo = () => {
     setTimeout(() => {
       dispatch(setSnpShowInfo());
     }, 1000);
+    console.log("ааа");
   };
 
   useEffect(() => {

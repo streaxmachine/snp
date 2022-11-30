@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { useGLTF, PerspectiveCamera, useAnimations } from "@react-three/drei";
 import { useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
-import * as THREE from "three";
 
 export function Camera({ scroll, ...props }) {
   //   const scroll = useScroll();
