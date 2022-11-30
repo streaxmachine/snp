@@ -1,23 +1,22 @@
 import { SET_SNP_SHOW_INFO } from "./actions";
-import { SET_HOUSE_SHOW_INFO } from "./actions";
+import { SET_HOUSE_SHOW_INFO, SHOW_SIDEBAR } from "./actions";
+
+// const initialState = {
+//   snpInfo: false,
+//   houseInfo: false,
+// };
 
 const initialState = {
-  snpInfo: false,
-  houseInfo: false,
+  sidebar: null,
 };
 
 export const sideBarReducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case SET_SNP_SHOW_INFO:
+    case SHOW_SIDEBAR: {
       return {
-        snpInfo: !state.snpInfo,
-        houseInfo: false,
+        sidebar: payload,
       };
-    case SET_HOUSE_SHOW_INFO:
-      return {
-        snpInfo: false,
-        houseInfo: !state.houseInfo,
-      };
+    }
     default:
       return state;
   }

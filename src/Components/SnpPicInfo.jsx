@@ -2,29 +2,28 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { gsap } from "gsap";
-import { setSnpShowInfo } from "../redux/actions";
+import { setSidebar, setSnpShowInfo } from "../redux/actions";
 
 const SnpPicInfo = () => {
   const dispatch = useDispatch();
-  const sideBar = useSelector((state) => state.sideBar);
+  const { sidebar } = useSelector((state) => state.sideBar);
 
   const handleClick = () => {
     gsap.to(".place-information", { x: 0, duration: 1 });
     setTimeout(() => {
-      dispatch(setSnpShowInfo());
+      dispatch(setSidebar(null));
     }, 1000);
-    console.log("ааа");
   };
 
   useEffect(() => {
-    if (sideBar.snpInfo) {
+    if (sidebar === "snpPic") {
       gsap.to(".place-information", { x: -300, duration: 1 });
     }
-  }, [sideBar]);
+  }, [sidebar]);
 
   return (
     <>
-      {sideBar.snpInfo ? (
+      {sidebar === "snpPic" ? (
         <div>
           <div className="place-information">
             <button className="button-31" onClick={handleClick}>

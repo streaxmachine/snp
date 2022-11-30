@@ -2,28 +2,28 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { gsap } from "gsap";
-import { setHouseShowInfo } from "../redux/actions";
+import { setHouseShowInfo, setSidebar } from "../redux/actions";
 
 const HousePicInfo = () => {
   const dispatch = useDispatch();
-  const sideBar = useSelector((state) => state.sideBar);
+  const { sidebar } = useSelector((state) => state.sideBar);
 
   const handleClick = () => {
     gsap.to(".place-information", { x: 0, duration: 1 });
     setTimeout(() => {
-      dispatch(setHouseShowInfo());
+      dispatch(setSidebar(null));
     }, 1000);
   };
 
   useEffect(() => {
-    if (sideBar.houseInfo) {
+    if (sidebar === "housePic") {
       gsap.to(".place-information", { x: -300, duration: 1 });
     }
-  }, [sideBar]);
+  }, [sidebar]);
 
   return (
     <>
-      {sideBar.houseInfo ? (
+      {sidebar === "housePic" ? (
         <div>
           <div className="place-information">
             <button className="button-31" onClick={handleClick}>

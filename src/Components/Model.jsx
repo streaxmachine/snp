@@ -1,6 +1,6 @@
 import { useGLTF, useTexture, Html } from "@react-three/drei";
 import { useDispatch } from "react-redux";
-import { setHouseShowInfo, setSnpShowInfo } from "../redux/actions";
+import { setHouseShowInfo, setSidebar, setSnpShowInfo } from "../redux/actions";
 import { TableInfo } from "./TableInfo";
 import { Camera } from "./Camera";
 import { useScroll } from "@react-three/drei";
@@ -13,8 +13,8 @@ function Model({ domEl, ...props }) {
   const { nodes } = useGLTF("/snpoffice9.glb");
   const scroll = useScroll();
 
-  const handleClick = (showSnp, showHouse) => {
-    dispatch(setHouseShowInfo());
+  const handleClick = () => {
+    dispatch(setSidebar("housePic"));
   };
 
   return (
@@ -53,7 +53,7 @@ function Model({ domEl, ...props }) {
           >
             <div
               className="label-3d"
-              onClick={() => dispatch(setSnpShowInfo())}
+              onClick={() => dispatch(setSidebar("snpPic"))}
             ></div>
           </Html>
 
@@ -133,10 +133,7 @@ function Model({ domEl, ...props }) {
           // position={[-15, 4.2, 5.2]}
           portal={domEl}
         >
-          <div
-            className="label-3d"
-            onClick={() => handleClick(false, true)}
-          ></div>
+          <div className="label-3d" onClick={() => handleClick()}></div>
         </Html>
       </mesh>
     </>
