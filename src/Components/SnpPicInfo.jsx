@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { gsap } from "gsap";
-import { setSidebar, setSnpShowInfo } from "../redux/actions";
+import { setSidebar } from "../redux/actions";
 
 const SnpPicInfo = () => {
   const dispatch = useDispatch();

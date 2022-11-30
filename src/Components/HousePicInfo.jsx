@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { gsap } from "gsap";
-import { setHouseShowInfo, setSidebar } from "../redux/actions";
+import { setSidebar } from "../redux/actions";
 
 const HousePicInfo = () => {
   const dispatch = useDispatch();

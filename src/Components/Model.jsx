@@ -1,6 +1,6 @@
 import { useGLTF, useTexture, Html } from "@react-three/drei";
 import { useDispatch } from "react-redux";
-import { setHouseShowInfo, setSidebar, setSnpShowInfo } from "../redux/actions";
+import { setSidebar } from "../redux/actions";
 import { TableInfo } from "./TableInfo";
 import { Camera } from "./Camera";
 import { useScroll } from "@react-three/drei";
