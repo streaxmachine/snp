@@ -8,23 +8,23 @@ export function Camera({ scroll, ...props }) {
   //   const scroll = useScroll();
 
   const group = useRef();
-  const { animations } = useGLTF("/snpOfficeCamera.glb");
+  const { animations } = useGLTF("/snpOfficeCamera2.glb");
   const { actions } = useAnimations(animations, group);
-  console.log(scroll.eps);
 
-  useEffect(() => void (actions["Action"].play().paused = true), [actions]);
+  useEffect(() => void (actions["Action.002"].play().paused = true), [actions]);
   useFrame((state, delta) => {
-    const action = actions["Action"];
-    // console.log(action.time);
-    // console.log(scroll.offset);
-    action.time = THREE.MathUtils.lerp(
-      action.time,
-      action.getClip().duration * scroll.offset,
-      0.05
-    );
-    if (scroll.offset < 0) {
-      action.reset();
-    }
+    const action = actions["Action.002"];
+
+    action.time = action.getClip().duration * (scroll.offset % 1);
+
+    // action.time = THREE.MathUtils.lerp(
+    //   action.time,
+    //   action.getClip().duration * scroll.offset,
+    //   0.05
+    // );
+    // if (scroll.offset < 0) {
+    //   action.reset();
+    // }
     // if (action.time > 7) {
     //   action.time = 0;
     // }

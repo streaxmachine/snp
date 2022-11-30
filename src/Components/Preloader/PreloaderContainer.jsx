@@ -5,16 +5,23 @@ import { Preloader } from "./Preloader";
 
 const PreloaderContainer = () => {
   const { active } = useProgress();
-  const [loading, setLoading] = useState(true);
+  const [experience, setExperience] = useState(false);
 
   useEffect(() => {
+    console.log(active);
     if (active === false) {
       setTimeout(() => {
-        setLoading(false);
-      }, 2500);
+        setExperience(true);
+      }, 2000);
     }
   }, [active]);
 
-  return <Preloader loading={loading} />;
+  const handleClick = () => {};
+
+  return (
+    <>
+      <Preloader experience={experience} handleClick={handleClick} />
+    </>
+  );
 };
 export default PreloaderContainer;

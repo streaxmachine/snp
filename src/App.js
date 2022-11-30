@@ -21,7 +21,6 @@ function App() {
   return (
     <>
       <PreloaderContainer />
-      <DragMouse />
       <Canvas
         flat
         camera={{ fov: 30, position: [27, 5, 2] }}
@@ -32,9 +31,9 @@ function App() {
         <Monitors />
         <ScrollControls
           infinite
-          damping={4}
+          damping={1}
           distance={4}
-          pages={5}
+          pages={10}
           style={{ paddingRight: "17px", boxSizing: "content-box" }}
         >
           <Model domEl={portalRef} />

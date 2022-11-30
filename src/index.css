@@ -46,7 +46,24 @@ body {
   position: fixed;
   background: rgba(0, 0, 0, 1);
   z-index: 2;
+  mask: url(../public/img/urban-sprite.png) no-repeat;
+	mask-size: 3500% 100%;
 
+}
+
+.animation{
+	animation: mask-play 1.2s steps(29) forwards;
+  pointer-events: none;
+}
+
+@keyframes mask-play {
+	from{
+		mask-position: 0% 0%;
+	}
+
+	to{
+		mask-position: 100% 0%;
+	}
 }
 
 .move-mouse {
@@ -175,3 +192,6 @@ animation: move-anim 5s linear infinite;
       transform: rotate(360deg);
   }
 }
+
+
+
