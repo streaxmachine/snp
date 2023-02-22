@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useProgress } from "@react-three/drei";
 import { useEffect } from "react";
 import { Preloader } from "./Preloader";
+import create from "zustand";
 
 const PreloaderContainer = () => {
   const { active } = useProgress();

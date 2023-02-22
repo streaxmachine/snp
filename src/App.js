@@ -1,6 +1,6 @@
 import "./App.css";
 import { Canvas } from "@react-three/fiber";
-import { Environment } from "@react-three/drei";
+import { Environment, Scroll } from "@react-three/drei";
 import { Model } from "./Components/Model";
 import SphereWireframe from "./Components/Sphere";
 import { Monitors } from "./Components/Monitors";
@@ -32,10 +32,15 @@ function App() {
           infinite
           damping={1}
           distance={4}
-          pages={10}
+          pages={3}
           style={{ paddingRight: "17px", boxSizing: "content-box" }}
         >
           <Model domEl={portalRef} />
+          <Scroll html>
+            <h1>html in here (optional)</h1>
+            <h1 style={{ top: "100vh" }}>second page</h1>
+            <h1 style={{ top: "200vh" }}>third page</h1>
+          </Scroll>
         </ScrollControls>
         <Environment preset="city" />
         <SphereWireframe domEl={portalRef} />

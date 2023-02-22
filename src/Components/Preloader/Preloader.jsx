@@ -9,7 +9,6 @@ export const Preloader = (props) => {
 
   const loaderClass =
     "loader-container-starter" + (animationClass ? " animation" : "");
-
   const onHangleClick = () => {
     setAnimationClass(true);
     setTimeout(() => {

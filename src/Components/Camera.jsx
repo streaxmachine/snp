@@ -13,9 +13,15 @@ export function Camera({ scroll, ...props }) {
   useEffect(() => void (actions["Action.002"].play().paused = true), [actions]);
   useFrame((state, delta) => {
     const action = actions["Action.002"];
+    console.log(action);
+    const a = scroll.range(0, 1 / 3);
+    const b = scroll.range(1 / 3, 1 / 3);
+    const f = scroll.visible(0 / 3, 1 / 3);
+    const c = scroll.visible(1 / 3, 1 / 3);
+    const d = scroll.visible(2 / 3, 1 / 3);
 
     action.time = action.getClip().duration * (scroll.offset % 1);
-
+    console.log(f, c, d);
     // action.time = THREE.MathUtils.lerp(
     //   action.time,
     //   action.getClip().duration * scroll.offset,

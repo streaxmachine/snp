@@ -52,7 +52,7 @@ body {
 }
 
 .animation{
-	animation: mask-play 1.2s steps(29) forwards;
+	animation: mask-play 1.5s steps(29) forwards;
   pointer-events: none;
 }
 

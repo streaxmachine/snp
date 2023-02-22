@@ -12,6 +12,7 @@ function Model({ domEl, ...props }) {
   const houseTexture = useTexture("/QueryHouse.jpg");
   const { nodes } = useGLTF("/snpoffice9.glb");
   const scroll = useScroll();
+  console.log(scroll);
 
   const handleClick = () => {
     dispatch(setSidebar("housePic"));
